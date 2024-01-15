@@ -19,5 +19,5 @@ we can calculate the radius of the only the electronic part of the exciton wavef
 $$ r_x^2 \approx \frac{\int |\bar{r} - \bar{r_0} |^2 \rho( {\bar{r}}) d\bar{r} } {\int \rho( {\bar{r}}) d\bar{r} } = \frac{\sum_{ijk} [(x_{ijk} - x_0)^2 + (y_{ijk} - y_0)^2 + (z_{ijk} - z_0)^2 ]\rho_{ijk}}{\sum_{ijk} \rho_{ijk}} $$
 
 Here, $\bar{r_0}$ is the centre of the electronic distribution, which needs to be defined after looking at the shape of electronic distribution.
-In our case, we have fixed the hole at C atom of ZnPc (chosen after looking at the maxima in wavefunction of HOMO). 
+In our case, $\bar{r_0}$ is taken as the hole position. We have fixed the hole at C atom of ZnPc (chosen after looking at the maxima in wavefunction of HOMO). 
 $\rho_{ijk}$ is read from the a3dr file (third column) written out by plotxct.f90 in BGW. 
