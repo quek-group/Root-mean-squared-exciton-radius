@@ -10,3 +10,14 @@ This code is written with a ZnPc/MoS2 organic-2D heterostructure system in mind:
  3. a3dr file is used for the code 
  4. One can use a z-bound on the electronic wavefunction to consider only the part of the wavefunction that lies 
     on the MoS2 layer (these lines are commented out)
+
+The Mott critical density is identified as $n_{Mott} \sim \frac{1}{\pi r_x^2}$, where $r_x$ is the in-plane gyration radius of the exciton. (Ref. Fogler et al, Nat. Commun. 2014, 5, 4555). 
+In our case for the CT exciton, the hole is localised on the molecule while the electron is quite delocalised but located on the MoS2. 
+One way to estimate the size of the CT exciton (only valid in our case as the hole is localised), 
+we can calculate the radius of the only the electronic part of the exciton wavefunction, keeping the hole fixed.
+
+$$ r_x^2 \approx \frac{\int |\bar{r} - \bar{r_0} |^2 \rho( {\bar{r}}) d\bar{r} } {\int \rho( {\bar{r}}) d\bar{r} } = \frac{\sum_{ijk} [(x_{ijk} - x_0)^2 + (y_{ijk} - y_0)^2 + (z_{ijk} - z_0)^2 ]\rho_{ijk}}{\sum_{ijk} \rho_{ijk}} $$
+
+Here, $\bar{r_0}$ is the centre of the electronic distribution, which needs to be defined after looking at the shape of electronic distribution.
+In our case, we have fixed the hole at C atom of ZnPc (chosen after looking at the maxima in wavefunction of HOMO). 
+$\rho_{ijk}$ is read from the a3dr file (third column) written out by plotxct.f90 in BGW. 
